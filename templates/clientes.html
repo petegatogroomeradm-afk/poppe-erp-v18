@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% block content %}
+<h1>Clientes</h1>
+<section class="panel compact">
+<form method="get" class="searchbar">
+<input name="busca" value="{{ busca or '' }}" placeholder="Buscar por nome, WhatsApp ou endereço">
+<button>Buscar</button>
+<a class="btn secondary" href="/clientes">Limpar</a>
+</form>
+</section>
+<section class="panel compact">
+<form method="post" class="form compact-form">
+<input name="nome" placeholder="Nome do cliente" required>
+<input name="telefone" placeholder="WhatsApp">
+<input name="endereco" placeholder="Endereço">
+<input name="email" placeholder="E-mail">
+<textarea name="observacoes" placeholder="Observações"></textarea>
+<button>Salvar Cliente</button>
+</form>
+</section>
+<section class="panel">
+<h2>Clientes cadastrados</h2>
+{% for c in clientes %}
+<div class="item client-card">
+  <div><b>{{ c[1] }}</b><br>{{ c[2] }} — {{ c[3] }}</div>
+  <div class="actions">
+    <a class="btn small" href="/clientes/{{ c[0] }}/editar">Editar</a>
+    <form method="post" action="/clientes/{{ c[0] }}/excluir" onsubmit="return confirm('Excluir este cliente?')"><button class="danger small">Excluir</button></form>
+  </div>
+</div>
+{% else %}<p>Nenhum cliente cadastrado.</p>{% endfor %}
+</section>
+{% endblock %}

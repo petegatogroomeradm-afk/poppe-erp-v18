@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<h1>Dashboard Executivo V20</h1>
+<div class="grid">
+<div class="card"><span>Clientes</span><b>{{ clientes }}</b></div>
+<div class="card"><span>Orçamentos</span><b>{{ qtd_orc }}</b></div>
+<div class="card"><span>Total Orçado</span><b>{{ moeda(total_orc) }}</b></div>
+<div class="card"><span>OS</span><b>{{ os_qtd }}</b></div>
+<div class="card"><span>Agenda Aberta</span><b>{{ agenda_aberta }}</b></div>
+<div class="card"><span>A Receber Auto</span><b>{{ moeda(receber_auto) }}</b></div>
+<div class="card"><span>Recebido</span><b>{{ moeda(recebido) }}</b></div>
+<div class="card"><span>Pendente</span><b>{{ moeda(pendente) }}</b></div>
+</div>
+<section class="panel"><h2>V20 Enterprise</h2><p>Agenda, OS integrada, contas a receber automáticas, CRM, PDF/contrato, PIX, WhatsApp, fotos e assinatura.</p></section>
+{% endblock %}

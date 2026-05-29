@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block content %}<h1>CRM Visual</h1><div class="kanban">{% for e in etapas %}<section class="col"><h2>{{ e }}</h2>{% for r in dados[e] %}<div class="deal"><b>{{ r[2] }}</b><br>{{ r[1] }}<br>{{ moeda(r[3]) }}</div>{% else %}<p class="muted">Sem itens</p>{% endfor %}</section>{% endfor %}</div>{% endblock %}

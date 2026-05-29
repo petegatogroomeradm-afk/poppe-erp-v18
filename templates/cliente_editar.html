@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block content %}
+<h1>Editar Cliente</h1>
+<section class="panel compact">
+<form method="post" class="form compact-form">
+<input name="nome" value="{{ cliente[1] }}" placeholder="Nome do cliente" required>
+<input name="telefone" value="{{ cliente[2] or '' }}" placeholder="WhatsApp">
+<input name="endereco" value="{{ cliente[3] or '' }}" placeholder="Endereço">
+<input name="email" value="{{ cliente[4] or '' }}" placeholder="E-mail">
+<textarea name="observacoes" placeholder="Observações">{{ cliente[5] or '' }}</textarea>
+<button>Salvar Alterações</button>
+<a class="btn secondary" href="/clientes">Voltar</a>
+</form>
+</section>{% endblock %}

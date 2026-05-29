@@ -1,0 +1,23 @@
+:root{--bg:#07111f;--card:#0f1b2e;--azul:#08a8ff;--txt:#e5eefb;--mut:#94a3b8}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#050b14,#0b1728);color:var(--txt);font-family:Arial,Helvetica,sans-serif}header{position:sticky;top:0;background:#08111ff2;backdrop-filter:blur(10px);padding:14px;border-bottom:1px solid #19304d;z-index:2}.brand strong{font-size:18px}.brand span{display:block;color:var(--mut);font-size:12px}nav{display:flex;gap:8px;overflow:auto;margin-top:12px;padding-bottom:4px}nav a,.btn,button{background:#0b7dff;color:white;text-decoration:none;border:none;border-radius:14px;padding:12px 14px;font-weight:bold;display:inline-block}button{width:100%;font-size:16px}.whats{background:#16a34a}main{padding:16px;max-width:1280px;margin:auto}h1{font-size:24px;color:white;margin:8px 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.card,.panel,.loginbox{background:var(--card);border:1px solid #1f3657;border-radius:22px;padding:16px;box-shadow:0 12px 30px #0004}.loginbox{max-width:430px;margin:60px auto}.card span{color:var(--mut);display:block;margin-bottom:8px}.card b{font-size:24px;color:#fff}.form{display:grid;gap:10px}input,select,textarea{width:100%;border:1px solid #244163;background:#07111f;color:white;border-radius:14px;padding:13px;font-size:16px}textarea{min-height:110px}.item{background:#07111f;border:1px solid #223b5d;border-radius:16px;padding:14px;margin:10px 0}pre{white-space:pre-wrap;background:#07111f;border-radius:12px;padding:12px;overflow:auto}#canvas{background:white;border-radius:14px;width:100%;max-width:420px;height:240px;touch-action:none}.row{display:flex;gap:10px;margin-top:12px}.full{margin-bottom:12px}.alert{background:#7f1d1d;border:1px solid #ef4444;padding:12px;border-radius:12px;margin-bottom:12px}.muted{color:var(--mut)}.kanban{display:grid;grid-template-columns:repeat(6,minmax(180px,1fr));gap:12px;overflow:auto}.col{background:#0f1b2e;border:1px solid #1f3657;border-radius:18px;padding:12px;min-height:300px}.deal{background:#07111f;border:1px solid #244163;border-radius:14px;padding:12px;margin:8px 0}@media(max-width:700px){main{padding:12px}nav a{white-space:nowrap}.row{flex-direction:column}.kanban{grid-template-columns:repeat(6,260px)}}
+.compact{padding:12px}
+.compact-form input,.compact-form textarea,.service-form input,.service-filters input,.service-filters select,.searchbar input{padding:10px 12px;min-height:42px}
+.compact-form textarea{min-height:74px}
+.searchbar{display:grid;grid-template-columns:1fr 130px 100px;gap:10px}
+.service-filters{display:grid;grid-template-columns:220px 1fr 130px 100px;gap:10px}
+.service-form{display:grid;grid-template-columns:120px 180px 1fr 100px 110px 110px 110px 150px 1fr 150px;gap:8px}
+.secondary{background:#334155}.danger{background:#991b1b}.small{padding:8px 10px;font-size:13px;width:auto}
+.client-card{display:flex;align-items:center;justify-content:space-between;gap:12px}.actions{display:flex;align-items:center;gap:8px}.actions form{margin:0}
+.table-wrap{overflow:auto;border-radius:14px;border:1px solid #244163}table{width:100%;border-collapse:collapse;background:#07111f}
+th,td{border-bottom:1px solid #1f3657;padding:10px;text-align:left;white-space:nowrap}th{background:#0b1e33;color:#fff}
+@media(max-width:900px){header{position:relative}nav{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}nav a{font-size:13px;text-align:center;padding:10px 8px}main{padding:10px}.searchbar,.service-filters,.service-form{grid-template-columns:1fr}.client-card{align-items:flex-start;flex-direction:column}.actions{width:100%}.actions .btn,.actions form,.actions button{width:100%;text-align:center}}
+@media(max-width:520px){nav{grid-template-columns:repeat(2,1fr)}h1{font-size:21px}.card b{font-size:19px}}
+
+/* V19.2 */
+.table-actions{display:flex;gap:8px;align-items:center}
+.table-actions form{margin:0}
+small.muted{display:block;margin:2px 0 8px 4px;color:#94a3b8}
+.loginbox input{background:#07111f!important}
+@media(max-width:900px){.table-actions{flex-direction:column;align-items:stretch}.table-actions .btn,.table-actions button{width:100%;text-align:center}}
+
+/* V20 */
+.whats{background:#16a34a!important}

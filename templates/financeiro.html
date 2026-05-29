@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% block content %}
+<h1>Financeiro Profissional / Contas a Receber</h1>
+<div class="grid">
+<div class="card"><span>Recebido Manual</span><b>{{ moeda(recebido) }}</b></div>
+<div class="card"><span>Pendente Manual</span><b>{{ moeda(pendente) }}</b></div>
+<div class="card"><span>Recebido Automático</span><b>{{ moeda(rec_auto) }}</b></div>
+<div class="card"><span>A Receber Automático</span><b>{{ moeda(pend_auto) }}</b></div>
+</div>
+<section class="panel">
+<h2>Contas a receber automáticas</h2>
+{% for r in recebimentos %}
+<div class="item client-card">
+<div><b>{{ r[1] }}</b> — {{ r[2] }}<br>{{ r[3] }} — {{ moeda(r[4]) }}<br>Vencimento: {{ r[5] }} — Status: {{ r[6] }}</div>
+<div class="actions">
+<form method="post" action="/financeiro/receber/{{ r[0] }}"><button class="small whats">Recebido</button></form>
+<form method="post" action="/financeiro/excluir/{{ r[0] }}" onsubmit="return confirm('Excluir lançamento?')"><button class="small danger">Excluir</button></form>
+</div>
+</div>
+{% else %}<p>Nenhuma conta a receber automática.</p>{% endfor %}
+</section>
+<section class="panel"><h2>Lançamentos antigos</h2>{% for i in itens %}<div class="item"><b>{{ i[1] }}</b> — {{ i[2] }}<br>{{ moeda(i[3]) }} — {{ i[4] }} — Venc.: {{ i[5] }}</div>{% else %}<p>Nenhum lançamento.</p>{% endfor %}</section>
+{% endblock %}

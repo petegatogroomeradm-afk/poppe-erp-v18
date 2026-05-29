@@ -1,0 +1,9 @@
+{
+  "name": "POPPE ERP PRO V19",
+  "short_name": "POPPE V19",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#08111f",
+  "icons": []
+}

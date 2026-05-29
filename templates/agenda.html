@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% block content %}
+<h1>Agenda de Serviços</h1>
+<section class="panel compact">
+<form method="get" class="searchbar">
+<input name="busca" value="{{ busca or '' }}" placeholder="Buscar por cliente, título ou data">
+<button>Buscar</button><a class="btn secondary" href="/agenda">Limpar</a>
+</form>
+</section>
+<section class="panel compact">
+<form method="post" class="form compact-form">
+<input name="data_agenda" placeholder="Data. Ex: 10/06/2026">
+<input name="hora" placeholder="Hora. Ex: 09:00">
+<input name="cliente" placeholder="Cliente">
+<input name="telefone" placeholder="WhatsApp">
+<input name="endereco" placeholder="Endereço">
+<input name="titulo" placeholder="Título. Ex: Visita técnica">
+<select name="tipo"><option>Visita técnica</option><option>Execução</option><option>Retorno</option><option>Cobrança</option></select>
+<select name="status"><option>Agendado</option><option>Confirmado</option><option>Em andamento</option><option>Concluído</option><option>Cancelado</option></select>
+<input name="valor" placeholder="Valor estimado">
+<textarea name="descricao" placeholder="Descrição"></textarea>
+<button>Salvar Agendamento</button>
+</form>
+</section>
+<section class="panel">
+<h2>Agendamentos</h2>
+{% for a in agenda %}
+<div class="item"><b>{{ a[6] }} {{ a[7] }} — {{ a[4] }}</b><br>{{ a[1] }} — {{ a[2] }}<br>{{ a[3] }}<br>Status: {{ a[9] }} — {{ moeda(a[10]) }}<br><pre>{{ a[5] }}</pre></div>
+{% else %}<p>Nenhum agendamento.</p>{% endfor %}
+</section>{% endblock %}

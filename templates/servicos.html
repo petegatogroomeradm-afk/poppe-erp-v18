@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% block content %}
+<h1>Tabela Inteligente de Serviços</h1>
+<section class="panel compact">
+<form method="get" class="service-filters">
+<select name="categoria"><option>Todas</option>{% for cat in categorias %}<option {% if cat == categoria %}selected{% endif %}>{{ cat }}</option>{% endfor %}</select>
+<input name="busca" value="{{ busca or '' }}" placeholder="Buscar serviço, categoria ou código">
+<button>Pesquisar</button><a class="btn secondary" href="/servicos">Limpar</a>
+</form>
+</section>
+<section class="panel compact">
+<h2>Cadastrar / Atualizar Serviço</h2>
+<form method="post" class="service-form">
+<input name="codigo" placeholder="Código. Ex: 0038" required>
+<input name="categoria" placeholder="Categoria" required>
+<input name="servico" placeholder="Descrição do serviço" required>
+<input name="unidade" placeholder="Unidade" value="un">
+<input name="minimo" placeholder="Mínimo">
+<input name="medio" placeholder="Médio">
+<input name="maximo" placeholder="Máximo">
+<input name="tempo" placeholder="Tempo">
+<input name="observacoes" placeholder="Observações">
+<button>Salvar Serviço</button>
+</form>
+</section>
+<section class="panel">
+<h2>Serviços cadastrados</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Código</th><th>Categoria</th><th>Serviço</th><th>Un</th><th>Mín.</th><th>Médio</th><th>Máx.</th><th>Tempo</th><th>Ação</th></tr></thead>
+<tbody>{% for s in servicos %}<tr><td>{{ s[1] }}</td><td>{{ s[2] }}</td><td>{{ s[3] }}</td><td>{{ s[4] }}</td><td>{{ moeda(s[5]) }}</td><td>{{ moeda(s[6]) }}</td><td>{{ moeda(s[7]) }}</td><td>{{ s[8] }}</td><td><div class="table-actions"><a class="btn small" href="/orcamentos/servico/{{ s[0] }}">Adicionar ao Orçamento</a><form method="post" action="/servicos/{{ s[0] }}/excluir" onsubmit="return confirm('Excluir serviço?')"><button class="danger small">Excluir</button></form></div></td></tr>{% else %}<tr><td colspan="9">Nenhum serviço cadastrado.</td></tr>{% endfor %}</tbody>
+</table></div></section>{% endblock %}

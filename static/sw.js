@@ -1,0 +1,1 @@
+const CACHE="poppe-v19-cache";self.addEventListener("install",e=>self.skipWaiting());self.addEventListener("fetch",e=>{e.respondWith(fetch(e.request).catch(()=>caches.match(e.request).then(r=>r||caches.match("/"))))});

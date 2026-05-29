@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block content %}
+<section class="loginbox">
+<h1>Login Seguro</h1>
+<form method="post" class="form">
+<input name="usuario" placeholder="Usuário" autocomplete="username">
+<input name="senha" type="password" placeholder="Senha" autocomplete="current-password">
+<button>Entrar</button>
+</form>
+<p class="muted">Acesso restrito. Entre com usuário e senha cadastrados.</p>
+</section>
+{% endblock %}

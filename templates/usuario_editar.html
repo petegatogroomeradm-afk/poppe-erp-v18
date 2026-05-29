@@ -1,0 +1,26 @@
+{% extends "base.html" %}{% block content %}
+<h1>Editar Usuário</h1>
+<section class="panel compact">
+<form method="post" class="form compact-form">
+<label>Usuário</label>
+<input name="usuario" value="{{ usuario[1] }}" required>
+<label>Nome</label>
+<input name="nome" value="{{ usuario[2] or '' }}">
+<label>Perfil / Permissão</label>
+<select name="perfil">
+{% for p in ["Administrador","Comercial","Financeiro","Técnico","Visualização"] %}
+<option {% if usuario[3] == p %}selected{% endif %}>{{ p }}</option>
+{% endfor %}
+</select>
+<label>Status</label>
+<select name="ativo">
+<option value="1" {% if usuario[4] %}selected{% endif %}>Ativo</option>
+<option value="0" {% if not usuario[4] %}selected{% endif %}>Inativo</option>
+</select>
+<label>Nova senha</label>
+<input name="senha" type="password" placeholder="Deixe em branco para manter a senha atual">
+<button>Salvar Alterações</button>
+<a class="btn secondary" href="/admin">Voltar</a>
+</form>
+</section>
+{% endblock %}
